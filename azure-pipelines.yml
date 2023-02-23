@@ -8,8 +8,6 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 
-container: jmferrer/azure-devops-agent:latest
-
 resources:
 - repo: self
 
