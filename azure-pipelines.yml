@@ -41,7 +41,8 @@ stages:
         mkdir $HOME/.local/bin
         export PATH=$PATH:$HOME/.local/bin
         curl -s https://raw.githubusercontent.com/kubescape/kubescape/master/install.sh | /bin/bash
-        kubescape scan --format junit --output results.xml $(Pipeline.Workspace)/manifests/*.yaml
+        cd $(Pipeline.Workspace)/manifests/
+        kubescape scan --format junit --output results.xml .
       displayName: 'Run Kubescape'
 
     - task: PublishTestResults@2
